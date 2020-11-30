@@ -245,7 +245,7 @@ internal val allLoweringsPhase = NamedCompilerPhase(
                             typeOperatorPhase,
                             bridgesPhase,
                             autoboxPhase,
-                            returnsInsertionPhase,
+                            returnsInsertionPhase
                         )
                 ),
         actions = setOf(defaultDumper, ::moduleValidationCallback)
@@ -391,6 +391,7 @@ internal val bitcodePhase = NamedCompilerPhase(
                 ghaPhase then
                 RTTIPhase then
                 generateDebugInfoHeaderPhase then
+                propertyAccessorInlinePhase then
                 escapeAnalysisPhase then
                 localEscapeAnalysisPhase then
                 codegenPhase then
